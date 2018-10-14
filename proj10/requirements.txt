@@ -1,3 +1,3 @@
-Django==2.1
-firebase
+Django==2.1.2
+python-firebase==1.2
 gunicorn
