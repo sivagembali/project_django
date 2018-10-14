@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/savedetails/" method="post">
+        {% csrf_token %}
+        <table align="center" border="2">
+    <tr>
+        <td>
+            Registration
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" name="idno" value="{{ key }}" placeholder="IDNO" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="uname" value="{{ name }}" placeholder="Name" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" name="cno" value="{{ cno }}" placeholder="Contact Nu" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Save">
+        </td>
+    </tr>
+</table>
+    </form>
+</body>
+</html>

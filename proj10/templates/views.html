@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/delete_record/" method="post">
+{% csrf_token %}
+    <table align="center" border="2" style="border-collapse: collapse">
+    <tr>
+        <th colspan="5">View All Data</th>
+    </tr>
+    <tr>
+        <th>IDNO</th>
+        <th>Name</th>
+        <th>Contact Nu</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+            <td align="center" colspan="5">
+                {{ msg }}
+            </td>
+        </tr>
+    {% for idno,details in d1.items %}
+        <tr>
+            <td>{{ idno }}</td>
+            <td>{{ details.name }}</td>
+            <td>{{ details.cno }}</td>
+            {% comment %}{% for x in details.values %}
+                <td>{{ x }}</td>
+
+            {% endfor %}{% endcomment %}
+            <td><a href="/updateRecord/{{ idno }}" name="update">Update</a> </td>
+            <td><button name="delete" value="{{ idno }}">Delete</button></td>
+        </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
